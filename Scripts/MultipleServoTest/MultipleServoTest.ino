@@ -3,51 +3,50 @@
 Servo servo1, servo2, servo3, servo4;
 
 void setup(){
-	servo1.attach(4);
-	servo2.attach(5);
-	servo3.attach(6);
-	servo4.attach(7);
-
-  goStraight();
+  	servo1.attach(4);
+  	servo2.attach(5);
+  	servo3.attach(6);
+  	servo4.attach(7);
 }
 
-void goStraight(){
-  servo1.write(103);
-  servo2.write(84);
-  servo3.write(84);
-  servo4.write(103);
-  delay(3000);
-
-  turn();
+void forward(int d){
+    servo1.write(103);
+    servo2.write(84);
+    servo3.write(84);
+    servo4.write(103);
+    delay(d);
 }
 
-void turn(){
-  int r = random(0,3);
-  if(r == 0){
+void reverse(int d){
+    servo1.write(94);
+    servo2.write(103);
+    servo3.write(103);
+    servo4.write(84);
+    delay(d);
+}
+
+void turnLeft(int d){
     servo1.write(84);
     servo2.write(84);
     servo3.write(84);
     servo4.write(84);
-    delay(random(500,3000));
-    goStraight();
-  } else if(r == 1) {
+    delay(d);
+}
+
+void turnRight(int d){
     servo1.write(103);
     servo2.write(103);
     servo3.write(103);
     servo4.write(103);
-    delay(random(500,3000));
-    goStraight();
-  } else {
-    servo1.write(84);
-    servo2.write(103);
-    servo3.write(103);
-    servo4.write(84);
-    delay(random(500,3000));
-    goStraight();
-  }
+    delay(d);
 }
 
 void loop(){
-  //
+    forward(3000);
+    turnLeft(1000);
+    forward(3000);
+    turnLeft(1000);
+    forward(3000);
+    turnLeft(1000);
 }
 
