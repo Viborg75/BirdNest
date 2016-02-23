@@ -45,10 +45,6 @@ void turnRight(int d){
 void loop(){
     // Program sequence here
     forward(3000);
-    turnLeft(1000);
-    forward(3000);
-    turnLeft(1000);
-    forward(3000);
-    turnLeft(1000);
+    turnLeft(1500);
 }
 
