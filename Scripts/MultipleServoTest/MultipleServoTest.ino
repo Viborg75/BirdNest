@@ -3,6 +3,7 @@
 Servo servo1, servo2, servo3, servo4;
 
 void setup(){
+    // Pin setup
   	servo1.attach(4);
   	servo2.attach(5);
   	servo3.attach(6);
@@ -42,6 +43,7 @@ void turnRight(int d){
 }
 
 void loop(){
+    // Program sequence here
     forward(3000);
     turnLeft(1000);
     forward(3000);
